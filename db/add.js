@@ -2,9 +2,9 @@ const list = require("./list");
 const updateContacts = require("./updateContacts");
 const crypto = require("crypto");
 
-const add = async (getNewContacts) => {
+const add = async (name, email, phone) => {
   const contacts = await list();
-  const newContact = { id: crypto.randomUUID(), ...getNewContacts };
+  const newContact = { id: crypto.randomUUID(), name, email, phone };
   contacts.push(newContact);
 
   await updateContacts(contacts);
