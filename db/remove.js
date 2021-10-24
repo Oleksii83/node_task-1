@@ -11,7 +11,6 @@ const remove = async (id) => {
     return null;
   }
   const removeContacts = contacts.splice(idx, 1);
-  //   const contactsString = JSON.stringify(contacts);
   await updateContacts(contacts);
   return removeContacts;
 };
